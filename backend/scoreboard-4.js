@@ -1,3 +1,6 @@
+//This is the scoreboard script. It fetches the player stats from the DH server and stores them in a sqlite database.
+//This should be run in parallel with the main DH  script.
+
 const express = require('express');
 const sqlite3 = require('sqlite3').verbose();
 const axios = require('axios');

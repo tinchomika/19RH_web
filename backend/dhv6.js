@@ -15,7 +15,8 @@ app.use(cors());
 
 const greetedPlayers = new Map();
 const playerNameToGreet = "[19.RH]Ramitos";
-//Fetches info from the RO webAdmin interface using an admin account
+//Fetches info from the RO webAdmin interface using an admin account.
+//Set the .env file as documented in the README
 async function fetchPlayerStats() {
     try {
         const response = await axios.get(process.env.PLAYERS_URL, {
