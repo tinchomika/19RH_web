@@ -1,0 +1,12 @@
+/basura
+
+/media
+
+/webv1
+
+# ignore all env files
+*.env
+
+*.env.test
+
+/backend/node_modules

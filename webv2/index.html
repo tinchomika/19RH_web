@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="es">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>19RH</title>
+<link rel="icon" href="favicon.ico">
+<link rel="stylesheet" href="styles.css">
+
+<head>
+    <style>
+        .subtitle {
+            font-size: 1.1em;
+            font-weight: normal;
+            margin-top: 0;
+            margin-bottom: 1em;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo"><img src="logo.png" alt="Logo"></div>
+        <button class="language-switch" onclick="toggleLanguage()">
+            <span lang="en">Español</span>
+            <span lang="es">English</span>
+        </button>
+    </header>
+    <div class="carousel-container">
+        <div class="carousel">
+            <div class="slide">
+                <img src="1.avif" alt="Autito">
+            </div>
+            <div class="slide">
+                <img src="2.avif" alt="Mapa nevado">
+            </div>
+            <div class="slide">
+                <img src="3.avif" alt="Tanque soviético">
+            </div>
+            <div class="slide">
+                <img src="4.avif" alt="Fotito grupal en el server">
+            </div>
+        </div>
+
+        <button class="carousel-btn prev">←</button>
+        <button class="carousel-btn next">→</button>
+
+        <div class="indicators"></div>
+    </div>
+
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span lang="en">Welcome to 19 RH's community server!</span>
+                <span lang="es">Bienvenido al 19 Regimiento Hispano</span>
+            </h1>
+            <p class="hero-subtitle">
+                <span lang="en">An spanish speaking community for Darkest Hour and various WW2 games</span>
+                <span lang="es">Una comunidad hispano-hablante centrada en Darkest Hour y demás juegos de la SGM</span>
+            </p>
+        </div>
+    </section>
+
+
+
+    <section class="content-section">
+        <div class="section-inner">
+            <h2>
+                <span lang="en">About the group</span>
+                <span lang="es">Sobre el clan</span>
+            </h2>
+            <p>
+                <span lang="en">
+                    We are a community of mainly South American players who enjoy playing various World War II games,
+                    primarily <strong>Darkest Hour: Europe '44-'45</strong>.
+                    <br> Currently, we have a public server in DH, as well as a Discord server where we discuss about
+                    the game. Although the server is hosted in South America and spanish is the main language spoken,
+                    everyone is welcome!.
+                </span></span>
+                <span lang="es">
+                    Somos una comunidad de jugadores que disfruta de jugar diversos juegos de la segunda guerra mundial,
+                    principalmente <strong>Darkest Hour: Europe '44-'45</strong>.
+
+                    <br> Contamos con un servidor público de DH y un servidor de Discord donde podés unirte para charlar
+                    sobre el juego. Aunque nuestro servidor está alojado en Sudamérica y el idioma principal es el
+                    español, ¡todos son bienvenidos!
+                </span>
+            </p>
+
+
+
+        </div>
+
+
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="section-inner">
+            <h2>
+                <span lang="en">Join us!</span>
+                <span lang="es">¡Jugá con nosotros!</span>
+            </h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>
+                        <span lang="en">Darkest Hour server</span>
+                        <span lang="es">Servidor de Darkest Hour</span>
+                    </h3>
+                    <p>
+                        <span lang="en" class="banner-container"><a
+                                href="https://www.gametracker.com/server_info/18.231.219.191:7757/" target="_blank"><img
+                                    src="https://cache.gametracker.com/server_info/18.231.219.191:7757/b_560_95_1.png"
+                                    border="0" width="560" height="95" alt="" /></a></span>
+                        <span lang="es" class="banner-container"><a
+                                href="https://www.gametracker.com/server_info/18.231.219.191:7757/" target="_blank"><img
+                                    src="https://cache.gametracker.com/server_info/18.231.219.191:7757/b_560_95_1.png"
+                                    border="0" width="560" height="95" alt="" /></a></span>
+                    </p>
+                </div>
+                <div class="card">
+                    <h3>
+                        <span lang="en">Discord</span>
+                        <span lang="es">Encontranos en Discord</span>
+                    </h3>
+                    <p>
+                        <span lang="en" class="banner-container-dc"><a href="https://discord.gg/QdmFXbNQvq"
+                                target="_blank"><img
+                                    src="https://discord.com/api/guilds/1229627241902768209/widget.png?style=banner2"
+                                    alt="Discord Banner 2" /></a></span>
+                        <span lang="es" class="banner-container-dc"><a href="https://discord.gg/QdmFXbNQvq"
+                                target="_blank"><img
+                                    src="https://discord.com/api/guilds/1229627241902768209/widget.png?style=banner2"
+                                    alt="Discord Banner 2" /></a></span>
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+    <section class="content-section">
+        <div class="section-inner">
+            </span><span lang="es">
+                <h2>Jugadores en línea</h2>
+            </span>
+            <span lang="en">
+                <h2>Online Players</h2>
+            </span>
+            <div class="section-inner">
+                <div id="player-container"></div>
+                <div class="container">
+                    <div class="frame">
+                        <div class="frame-header">
+                            <h2 lang="es">Mejores Jugadores</h2>
+                            <p lang="es" class="subtitle">Basado en el puntaje total de las ultimas 100 partidas</p>
+                            <h2 lang="en">Top Players</h2>
+                            <p lang="en" class="subtitle">Based on the total score of the last 100 games</p>
+                        </div>
+                        <div id="top-players">
+                            <div class="loading">Cargando...</div>
+                        </div>
+                    </div>
+                    <div class="frame">
+                        <div class="frame-header">
+                            <h2 lang="es">Últimas Partidas</h2>
+                            <p lang="es" class="subtitle">Las últimas 10 batallas jugadas con +500 pts</p>
+                            <h2 lang="en">Recent Games</h2>
+                            <p lang="en" class="subtitle">The last 10 games played with +500 pts</p>
+                        </div>
+                        <div id="recent-games">
+                            <div class="loading">Cargando...</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function toggleLanguage() {
+            const lang = document.documentElement.lang === 'en' ? 'es' : 'en';
+            document.documentElement.lang = lang;
+        }
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        document.querySelectorAll('.content-section').forEach((section) => {
+            observer.observe(section);
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const carousel = document.querySelector('.carousel');
+            const slides = document.querySelectorAll('.slide');
+            const prevBtn = document.querySelector('.prev');
+            const nextBtn = document.querySelector('.next');
+            const indicatorsContainer = document.querySelector('.indicators');
+
+            let currentSlide = 0;
+            let autoplayInterval;
+
+            // Create indicators
+            slides.forEach((_, index) => {
+                const indicator = document.createElement('div');
+                indicator.classList.add('indicator');
+                if (index === 0) indicator.classList.add('active');
+                indicator.addEventListener('click', () => goToSlide(index));
+                indicatorsContainer.appendChild(indicator);
+            });
+
+            const indicators = document.querySelectorAll('.indicator');
+
+            function updateSlidePosition() {
+                carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
+                indicators.forEach((indicator, index) => {
+                    indicator.classList.toggle('active', index === currentSlide);
+                });
+            }
+
+            function goToSlide(index) {
+                currentSlide = index;
+                if (currentSlide < 0) currentSlide = slides.length - 1;
+                if (currentSlide >= slides.length) currentSlide = 0;
+                updateSlidePosition();
+                resetAutoplay();
+            }
+
+            function nextSlide() {
+                goToSlide(currentSlide + 1);
+            }
+
+            function prevSlide() {
+                goToSlide(currentSlide - 1);
+            }
+
+            function startAutoplay() {
+                autoplayInterval = setInterval(nextSlide, 5000);
+            }
+
+            function resetAutoplay() {
+                clearInterval(autoplayInterval);
+                startAutoplay();
+            }
+
+
+            prevBtn.addEventListener('click', prevSlide);
+            nextBtn.addEventListener('click', nextSlide);
+
+
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            carousel.addEventListener('touchstart', e => {
+                touchStartX = e.changedTouches[0].screenX;
+            });
+
+            carousel.addEventListener('touchend', e => {
+                touchEndX = e.changedTouches[0].screenX;
+                if (touchStartX - touchEndX > 50) nextSlide();
+                if (touchEndX - touchStartX > 50) prevSlide();
+            });
+
+
+            startAutoplay();
+        });
+
+        async function loadPlayers() {
+            try {
+                const response = await fetch('/api/dh-info');
+                const data = await response.json();
+
+                const playerContainer = document.getElementById('player-container');
+                playerContainer.innerHTML = '';
+
+                if (data.length === 0) {
+                    playerContainer.innerHTML = '<p class="no-players" lang="es">No hay jugadores conectados</p><p class="no-players" lang="en">No players connected</p>';
+                } else {
+                    const table = document.createElement('table');
+                    table.classList.add('player-table');
+
+                    const headerRow = document.createElement('tr');
+                    const headers = [
+                        { es: "Jugador", en: "Player" },
+                        { es: "Puntaje", en: "Score" },
+                        { es: "Equipo", en: "Team" },
+                        { es: "Ping", en: "Ping" }
+                    ];
+
+                    headers.forEach(header => {
+                        const th = document.createElement('th');
+                        const esHeader = document.createElement('p');
+                        esHeader.setAttribute('lang', 'es');
+                        esHeader.textContent = header.es;
+
+                        const enHeader = document.createElement('p');
+                        enHeader.setAttribute('lang', 'en');
+                        enHeader.textContent = header.en;
+
+                        th.appendChild(esHeader);
+                        th.appendChild(enHeader);
+                        headerRow.appendChild(th);
+                    });
+                    table.appendChild(headerRow);
+
+                    // Sort players by team and then by score
+                    data.sort((a, b) => {
+                        if (a.equipo === b.equipo) {
+                            return b.score - a.score; // Descending order by score
+                        }
+                        return a.equipo.localeCompare(b.equipo); // Ascending order by team
+                    });
+
+                    data.forEach(player => {
+                        const team = player.equipo === "Blue" ? "Allies" : player.equipo === "Red" ? "Axis" : player.equipo;
+                        const row = document.createElement('tr');
+                        row.innerHTML = `
+            <td>${player.jugador}</td>
+            <td>${player.score || 0}</td>
+            <td>${team || 0}</td>
+            <td>${player.ping || 0}</td>
+        `;
+                        table.appendChild(row);
+                    });
+
+                    playerContainer.appendChild(table);
+                }
+            } catch (error) {
+                console.error("Error al cargar los datos:", error);
+            }
+        }
+
+
+        loadPlayers();
+
+
+
+
+        function formatDate(dateString) {
+            const options = {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+            };
+            return new Date(dateString).toLocaleDateString('es-ES', options);
+        }
+
+        function createTopPlayersTable(players) {
+            return `
+                <table>
+                    <thead>
+                        <tr>
+                            <th lang="es">Posición</th>
+                            <th lang="en">Position</th>
+                            <th lang="es">Jugador</th>
+                            <th lang="en">Player</th>
+                            <th lang="es">Puntaje Total</th>
+                            <th lang="en">Total Score</th>
+                            <th lang="es">Partidas</th>
+                            <th lang="en">Games Played</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${players.map((player, index) => `
+                            <tr>
+                                <td>#${index + 1}</td>
+                                <td>${player.player_name}</td>
+                                <td>${player.total_score}</td>
+                                <td>${player.games_played}</td>
+                            </tr>
+                        `).join('')}
+                    </tbody>
+                </table>
+            `;
+        }
+
+        function createGameTable(game) {
+            return `
+        <div class="map-info">
+            <span class="map-name">${game.map}</span>
+            <span class="date-info">${formatDate(game.date)}</span>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th lang="es">Jugador</th>
+                    <th lang="en">Player</th>
+                    <th lang="es">Equipo</th>
+                    <th lang="en">Team</th>
+                    <th lang="es">Puntaje</th>
+                    <th lang="en">Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                ${game.players
+                    .sort((a, b) => {
+                        if (a.team !== b.team) return a.team.localeCompare(b.team);
+                        return b.score - a.score;
+                    })
+                    .map(player => {
+                        const team = player.team === "Blue" ? "Allies" : player.team === "Red" ? "Axis" : player.team;
+                        return `
+                    <tr class="team-${team.toLowerCase()}">
+                        <td>${player.player_name}</td>
+                        <td>${team}</td>
+                        <td>${player.score}</td>
+                    </tr>
+                `;
+                    }).join('')}
+            </tbody>
+        </table>
+    `;
+        }
+
+        async function fetchAndUpdateTopPlayers() {
+            try {
+                const response = await fetch('/score/top-players');
+                const players = await response.json();
+                document.getElementById('top-players').innerHTML = createTopPlayersTable(players);
+            } catch (error) {
+                console.error('Error fetching top players:', error);
+                document.getElementById('top-players').innerHTML = '<div class="error">Error al cargar los datos</div>';
+            }
+        }
+
+        async function fetchAndUpdateRecentGames() {
+            try {
+                const response = await fetch('/score/recent-games');
+                const games = await response.json();
+                document.getElementById('recent-games').innerHTML =
+                    games.slice(0, 10).map(game => createGameTable(game)).join('<div style="margin: 20px 0;"></div>');
+            } catch (error) {
+                console.error('Error fetching recent games:', error);
+                document.getElementById('recent-games').innerHTML = '<div class="error">Error al cargar los datos</div>';
+            }
+        }
+
+        // Initial load
+        fetchAndUpdateTopPlayers();
+        fetchAndUpdateRecentGames();
+
+        // Refresh data every minute
+        setInterval(() => {
+            fetchAndUpdateTopPlayers();
+            fetchAndUpdateRecentGames();
+        }, 60000);
+    </script>
+</body>
+
+</html>
