@@ -169,11 +169,11 @@ app.post("/api/mensaje", async (req, res) => {
     res.json({ success: true, result });
 });
 
-cron.schedule("*/15 * * * *", async () => {
+cron.schedule("*/20 * * * *", async () => {
     await sendMessageToConsole("Espero que estes disfrutando del juego!");
 });
 cron.schedule("*/16 * * * *", async () => {
-    await sendMessageToConsole("Puedes contactarte con nosotros en nuestra pagina: 19rh.mooo.com");
+    await sendMessageToConsole("Encontrate en la scoreboard: 19rh.mooo.com");
 });
 
 cron.schedule("1 * * * *", async () => {
