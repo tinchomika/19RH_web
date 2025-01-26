@@ -65,6 +65,8 @@
                 <li lang="en"><a href="#">Home</a></li>
                 <li lang="es"><a href="#player-container" id="scoreboard-link">Estadisticas</a></li>
                 <li lang="en"><a href="#player-container" id="scoreboard-link">Scoreboard</a></li>
+                <li lang="es"><a href="#donations-container" id="donations-link">Donaciones</a></li>
+                <li lang="en"><a href="#donations-container" id="donations-link">Donations</a></li>
             </ul>
         </nav>
         <button class="language-switch" onclick="toggleLanguage()">
@@ -206,12 +208,31 @@
             </div>
         </div>
     </section>
+    <section id="donations-container" class="content-section" style="text-align: center;">
+        <div class="section-inner">
+            <h2>
+                <span lang="en">Donations</span>
+                <span lang="es">Donaciones</span>
+            </h2>
+            <p>
+                <span lang="en">Support our community server!</span>
+                <span lang="es">¡Apoya nuestro servidor comunitario!</span>
+                <br>
+                <a href='https://cafecito.app/19regimientohispano' rel='noopener' target='_blank'>
+                    <img srcset='https://cdn.cafecito.app/imgs/buttons/button_5.png 1x, https://cdn.cafecito.app/imgs/buttons/button_5_2x.png 2x, https://cdn.cafecito.app/imgs/buttons/button_5_3.75x.png 3.75x' src='https://cdn.cafecito.app/imgs/buttons/button_5.png' alt='Invitame un café en cafecito.app' style="width: 200px; margin-top: 20px;" />
+                </a>
+            </p>
+        </div>
+    </section>
     <div class="modal" id="recentGamesModal">
         <div class="modal-content" id="modalContent">
             <span class="modal-close" onclick="closeModal()">&times;</span>
             <div id="modalData"></div>
         </div>
     </div>
+    
+    
+    
     <script>
         //fullscreen test
         const title = document.getElementById('recent-games-header');
