@@ -235,6 +235,22 @@
                 <a href='https://cafecito.app/19regimientohispano' rel='noopener' target='_blank'>
                     <img srcset='https://cdn.cafecito.app/imgs/buttons/button_5.png 1x, https://cdn.cafecito.app/imgs/buttons/button_5_2x.png 2x, https://cdn.cafecito.app/imgs/buttons/button_5_3.75x.png 3.75x' src='https://cdn.cafecito.app/imgs/buttons/button_5.png' alt='Invitame un café en cafecito.app' style="width: 200px; margin-top: 20px;" />
                 </a>
+                <div id="donate-button-container">
+                    <div id="donate-button"></div>
+                    <script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
+                    <script>
+                    PayPal.Donation.Button({
+                    env:'production',
+                    hosted_button_id:'PBRZDFXC65FFQ',
+                    image: {
+                    src:'https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif',
+                    alt:'Donate with PayPal button',
+                    title:'PayPal - The safer, easier way to pay online!',
+                    }
+                    }).render('#donate-button');
+                    </script>
+                    </div>
+                    
             </p>
         </div>
     </section>
