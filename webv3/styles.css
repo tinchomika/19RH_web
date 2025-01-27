@@ -459,6 +459,39 @@ tr:last-child td {
     opacity: 0.7;
 }
 
+.footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.social-icons {
+    display: inline-flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.social-icons a {
+    color: white;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.social-icons a {
+    text-decoration: none;
+    color: white;
+}
+
+.social-icons i {
+    font-size: 1.2rem;
+}
+
 body.modal-open {
     overflow: hidden;
 }
