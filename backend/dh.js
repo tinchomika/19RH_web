@@ -4,7 +4,6 @@ const cheerio = require("cheerio");
 const cron = require("node-cron");
 const cors = require('cors');
 const dgram = require('dgram');
-const client = dgram.createSocket('udp4'); //NOT NEEDED. but i'll keep it here for a later UDP server query function
 require('dotenv').config();
 
 
@@ -113,7 +112,7 @@ async function fetchPlayerStats() {
             }
         }
 
-        // Meti cambio aca wacho
+        // Greet players
         for (const playerName of playersToGreet) {
             if (playerName.includes("Ramitos")) {
                 await sendMessageToConsole(`Llego Ramitos... corran por sus vidas`);
@@ -173,11 +172,11 @@ cron.schedule("*/20 * * * *", async () => {
     await sendMessageToConsole("Espero que estes disfrutando del juego!");
 });
 cron.schedule("*/16 * * * *", async () => {
-    await sendMessageToConsole("Encontrate en la scoreboard: 19rh.mooo.com");
+    await sendMessageToConsole("Encontrate en la scoreboard: 19rh.tinchomika.com");
 });
 
 cron.schedule("1 * * * *", async () => {
-    await sendMessageToConsole("Tenemos grupo de Discord! mas info en 19rh.mooo.com");
+    await sendMessageToConsole("Tenemos grupo de Discord! mas info en 19rh.tinchomika.com");
 });
 
 cron.schedule("* * * * *", async () => {

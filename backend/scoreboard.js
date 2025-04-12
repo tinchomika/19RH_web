@@ -153,7 +153,7 @@ async function saveGame() {
   });
 }
 // Recent games endpoint
-app.get('/score/recent-games', (req, res) => {
+app.get('/recent-games', (req, res) => {
   const query = `
     SELECT 
       g.id, g.map, g.date,
@@ -185,7 +185,7 @@ app.get('/score/recent-games', (req, res) => {
   });
 });
 //meti 50 como tope de top-players
-app.get('/score/top-players', (req, res) => {
+app.get('/top-players', (req, res) => {
   const query = `
     SELECT 
       player_name,
@@ -207,7 +207,7 @@ app.get('/score/top-players', (req, res) => {
   });
 });
 
-app.get('/score/current-game', (req, res) => {
+app.get('/current-game', (req, res) => {
   const players = Array.from(currentGame.players.values())
     .sort((a, b) => {
       // Sort by team first, then by score
