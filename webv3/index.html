@@ -284,7 +284,9 @@
             <div id="modalData"></div>
         </div>
     </div>
-    
+
+    <script data-goatcounter="https://19rh.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
     
     
     <script>
@@ -395,7 +397,7 @@
         });
         async function loadPlayers() {
             try {
-                const response = await fetch('/api/dh-info');
+                const response = await fetch('https://api.tinchomika.com/dh/api/dh-info');
                 const data = await response.json();
                 const playerContainer = document.getElementById('player-container');
                 playerContainer.innerHTML = '';
@@ -525,7 +527,7 @@
         }
         async function fetchAndUpdateTopPlayers() {
             try {
-                const response = await fetch('/score/top-players');
+                const response = await fetch('https://api.tinchomika.com/dh/scoreboard/top-players');
                 const players = await response.json();
                 document.getElementById('top-players').innerHTML = createTopPlayersTable(players);
             } catch (error) {
@@ -535,7 +537,7 @@
         }
         async function fetchAndUpdateRecentGames() {
             try {
-                const response = await fetch('/score/recent-games');
+                const response = await fetch('https://api.tinchomika.com/dh/scoreboard/recent-games');
                 const games = await response.json();
                 return games;
             } catch (error) {
