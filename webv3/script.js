@@ -256,7 +256,7 @@
     async function fetchAndUpdateRecentGamesForMain() {
         const games = await fetchAndUpdateRecentGames();
         document.getElementById('recent-games').innerHTML =
-            games.slice(0, 4).map(game => createGameTable(game)).join('<div style="margin: 20px 0;"></div>');
+            games.slice(0, 7).map(game => createGameTable(game)).join('<div style="margin: 20px 0;"></div>');
     }
     fetchAndUpdateTopPlayers();
     fetchAndUpdateRecentGamesForMain();
