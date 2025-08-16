@@ -96,7 +96,7 @@ async function fetchPlayerStats() {
                         map: map
                     });
 
-                    if ((playerName === playerNameToGreet || playerName.includes("[19.RH]")) &&
+                    if ((playerName === playerNameToGreet || playerName.includes("3-DVH")) &&
                         !greetedPlayers.has(playerName)) {
                         playersToGreet.push(playerName);
                     }
@@ -172,11 +172,11 @@ cron.schedule("*/20 * * * *", async () => {
     await sendMessageToConsole("Espero que estes disfrutando del juego!");
 });
 cron.schedule("*/16 * * * *", async () => {
-    await sendMessageToConsole("Encontrate en la scoreboard: 19rh.tinchomika.com");
+    await sendMessageToConsole("Encontrate en la scoreboard: lth.tinchomika.com");
 });
 
 cron.schedule("1 * * * *", async () => {
-    await sendMessageToConsole("Tenemos grupo de Discord! mas info en 19rh.tinchomika.com");
+    await sendMessageToConsole("Tenemos grupo de Discord! mas info en lth.tinchomika.com");
 });
 
 cron.schedule("* * * * *", async () => {

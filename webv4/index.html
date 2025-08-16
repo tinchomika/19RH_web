@@ -316,7 +316,7 @@
                 loading: true,
                 players: [],
                 init() {
-                    fetch('https://api.tinchomika.com/dh/api/dh-info')
+                    fetch('https://tranki.tinchomika.com/dh/api/dh-info')
                         .then(response => response.json())
                         .then(data => {
                             this.players = data.sort((a, b) => {
@@ -334,7 +334,7 @@
                 loading: true,
                 players: [],
                 init() {
-                    fetch('https://api.tinchomika.com/dh/scoreboard/top-players')
+                    fetch('https://tranki.tinchomika.com/dh/scoreboard/top-players')
                         .then(response => response.json())
                         .then(data => {
                             this.players = data;
@@ -347,7 +347,7 @@
                 loading: true,
                 games: [],
                 init() {
-                    fetch('https://api.tinchomika.com/dh/scoreboard/recent-games')
+                    fetch('https://tranki.tinchomika.com/dh/scoreboard/recent-games')
                         .then(response => response.json())
                         .then(data => {
                             this.games = data;
