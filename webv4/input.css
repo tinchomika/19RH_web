@@ -1,0 +1,21 @@
+:root {
+    /* light theme */
+    --color-surface: #FFFFFF;
+    --color-surface-alt: #F9FAFB;
+    --color-on-surface: #4B5563;
+    --color-on-surface-strong: #111827;
+    --color-primary: #000000;
+    --color-outline: #D1D5DB;
+
+    /* dark theme */
+    --color-surface-dark: #000000;
+    --color-surface-dark-alt: #030508;
+    --color-on-surface-dark: #9CA3AF;
+    --color-on-surface-dark-strong: #FFFFFF;
+    --color-primary-dark: #FFFFFF;
+    --color-outline-dark: #4B5563;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

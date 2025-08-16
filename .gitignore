@@ -11,6 +11,7 @@
 *.env.test
 
 /backend/node_modules
+/webv4/node_modules
 
 gameScores.db
 .qodo
