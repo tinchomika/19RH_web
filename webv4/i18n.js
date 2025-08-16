@@ -4,12 +4,11 @@ const translations = {
         scoreboard: 'Estadisticas',
         donations: 'Donaciones',
         language_button: 'English',
-        welcome_message: 'Bienvenido al 19 Regimiento Hispano',
-        welcome_subtitle: "Una comunidad hispano-hablante centrada en Darkest Hour y demás juegos de la SGM",
+        welcome_message: 'Bienvenido a La Taberna Hispana',
+        welcome_subtitle: "Somos ese grupito que habla español en medio de videojuegos con una base de jugadores principalmente anglo-parlantes ",
         about_title: 'Sobre el clan',
-        about_p_1: `Somos una comunidad de jugadores que disfruta de jugar diversos juegos de la segunda guerra mundial,
-                    principalmente <strong>Darkest Hour: Europe '44-'45</strong>.`,
-        about_p_2: `Contamos con un servidor público de DH y un servidor de Discord donde podés unirte para charlar
+        about_p_1: `Somos una comunidad hispano-hablante centrada en diversos juegos históricos donde no predomina nuestro idioma.`,
+        about_p_2: `Contamos con un servidor público de Darkest Hour y un servidor de Discord donde podés unirte para charlar
                     sobre el juego, organizar eventos y demás.`,
         about_p_3: `Aunque nuestro servidor está alojado en Sudamérica y el idioma principal es el
                     español, ¡todos son bienvenidos!`,
@@ -36,7 +35,7 @@ const translations = {
         donations_title: 'Donaciones',
         donations_subtitle: '¡Ayuda a mantener vivo el server!',
         donors_title: 'Agradecimientos',
-        donors_p: `Aquí están los nombres de las personas que han donado al servidor: <strong>Whoops!</strong> No se han encontrado donaciones. <br>¿Ya donaste y tu nombre no aparece aquí? <a href= "https://discord.gg/QdmFXbNQvq" target="_blank" class="text-blue-400 hover:underline">Contáctanos en Discord!</a>`,
+        donors_p: `Aquí están los nombres de las personas que han donado al servidor:<br> <strong>Petri I.</strong> <br>¿Ya donaste y tu nombre no aparece aquí? <a href= "https://discord.gg/QdmFXbNQvq" target="_blank" class="text-blue-400 hover:underline">Contáctanos en Discord!</a>`,
         footer_p: `&copy; 2025 Equipo administrador del 19RH. Esta página es mantenida por <a href="https://tinchomika.com/" target="_blank" class="text-blue-400 hover:underline"> Dino </a>`
 
     },
@@ -45,12 +44,11 @@ const translations = {
         scoreboard: 'Scoreboard',
         donations: 'Donations',
         language_button: 'Español',
-        welcome_message: "Welcome to 19 RH's community server!",
-        welcome_subtitle: 'An spanish speaking community for Darkest Hour and various WW2 games',
+        welcome_message: "Welcome to La Taberna Hispana",
+        welcome_subtitle: 'We are a spanish speaking community for Darkest Hour and various historical games',
         about_title: 'About the group',
-        about_p_1: `We are a community of mainly South American players who enjoy playing various World War II games,
-                    primarily <strong>Darkest Hour: Europe '44-'45</strong>.`,
-        about_p_2: `Currently, we have a public server in DH, as well as a Discord server where we discuss about
+        about_p_1: `We enjoy playing historical games, but we commonly do not share our language with the rest of the community, thats why we created La Taberna Hispana, a place where all spanish speakers can reunite.`,
+        about_p_2: `Currently, we have a public server in Darkest Hour, as well as a Discord server where we discuss about
                     the game.`,
         about_p_3: `Although the server is hosted in South America and spanish is the main language spoken,
                     everyone is welcome!.`,
@@ -77,7 +75,7 @@ const translations = {
         donations_title: 'Donations',
         donations_subtitle: 'Support our community server!',
         donors_title: 'Donors',
-        donors_p: `Here are the names of the people who have helped us to keep the server running: <strong>Whoops!</strong> No donations found. <br>Already donated and your name is not here? <a href= "https://discord.gg/QdmFXbNQvq" target="_blank" class="text-blue-400 hover:underline">Contact us on Discord!</a>`,
+        donors_p: `Here are the names of the people who have helped us to keep the server running: <br> <strong>Petri I.</strong> <br>Already donated and your name is not here? <a href= "https://discord.gg/QdmFXbNQvq" target="_blank" class="text-blue-400 hover:underline">Contact us on Discord!</a>`,
         footer_p: `&copy; 2025 19RH Admin team. This page is maintained by <a href="https://tinchomika.com/" target="_blank" class="text-blue-400 hover:underline"> Dino </a>`
     }
 };
