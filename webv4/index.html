@@ -3,10 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>19RH - Comunidad Darkest Hour</title>
+    <title>La Taberna Hispana</title>
     <link href="./output.css" rel="stylesheet">
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script src="i18n.js"></script>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta name="description" content="La Taberna Hispana es un grupo de jugadores hispanohablantes que disfrutan de jugar diversos juegos de la segunda guerra mundial, principalmente Darkest Hour: Europe '44-'45.">
+    <meta name="keywords" content="Darkest Hour, DH, 19RH, 19 RH, La Taberna Hispana, Spanish speaking community, Hispano-speaking community, Hispano-speaking server, Hispano-speaking games, Hispano-speaking game, Darkest Hour server, Darkest Hour games, Darkest Hour game, 19RH server, 19RH games, 19RH game">
+    <meta name="author" content="La Taberna Hispana">
+    <meta property="og:title" content="La Taberna Hispana">
+    <meta property="og:description" content="La Taberna Hispana es un grupo de jugadores hispanohablantes que disfrutan de jugar diversos juegos de la segunda guerra mundial, principalmente Darkest Hour: Europe '44-'45.">
+    <meta property="og:image" content="https://lth.tinchomika.com/favicon.png">
 </head>
 <body class="bg-gray-900 text-white flex flex-col min-h-screen" x-data="i18n">
 
@@ -46,13 +53,13 @@
         <section class="relative h-screen"
             x-data="{
                 images: [
-                    '../webv3/1.avif',
-                    '../webv3/6.avif',
-                    '../webv3/4.avif',
-                    '../webv3/2.avif',
-                    '../webv3/5.avif',
-                    '../webv3/7.avif',
-                    '../webv3/3.avif'
+                    '1.avif',
+                    '6.avif',
+                    '4.avif',
+                    '2.avif',
+                    '5.avif',
+                    '7.avif',
+                    '3.avif'
                 ],
                 arrowsNavigation: true,
                 dotsNavigation: true,
@@ -175,27 +182,45 @@
                 <div x-show="!loading && players.length === 0" class="mt-8">
                     <p x-text="t('no_players')"></p>
                 </div>
-                <div x-show="!loading && players.length > 0" class="mt-8">
-                    <table class="w-full text-left">
-                        <thead>
-                            <tr>
-                                <th class="p-2" x-text="t('player')"></th>
-                                <th class="p-2" x-text="t('score')"></th>
-                                <th class="p-2" x-text="t('team')"></th>
-                                <th class="p-2" x-text="t('ping')"></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <template x-for="player in players" :key="player.jugador">
-                                <tr>
-                                    <td class="p-2" x-text="player.jugador"></td>
-                                    <td class="p-2" x-text="player.score || 0"></td>
-                                    <td class="p-2" x-text="player.equipo === 'Blue' ? 'Allies' : 'Axis'"></td>
-                                    <td class="p-2" x-text="player.ping || 0"></td>
-                                </tr>
-                            </template>
-                        </tbody>
-                    </table>
+                <div x-show="!loading && players.length > 0" class="mt-8 grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="text-xl font-bold text-blue-400 mb-2">Allies</h4>
+                        <div class="flex justify-between text-sm py-1 border-b border-gray-700 font-bold">
+                            <span x-text="t('player')"></span>
+                            <div class="flex items-center">
+                                <span class="mr-4" x-text="t('score')"></span>
+                                <span x-text="t('ping')"></span>
+                            </div>
+                        </div>
+                        <template x-for="player in getTeamPlayers('Allies')" :key="player.jugador">
+                            <div class="flex justify-between text-sm py-1 border-b border-gray-700">
+                                <span x-text="player.jugador"></span>
+                                <div class="flex items-center">
+                                    <span class="font-bold mr-4" x-text="player.score || 0"></span>
+                                    <span class="text-gray-400" x-text="player.ping || 0"></span>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-bold text-red-500 mb-2">Axis</h4>
+                        <div class="flex justify-between text-sm py-1 border-b border-gray-700 font-bold">
+                            <span x-text="t('player')"></span>
+                            <div class="flex items-center">
+                                <span class="mr-4" x-text="t('score')"></span>
+                                <span x-text="t('ping')"></span>
+                            </div>
+                        </div>
+                        <template x-for="player in getTeamPlayers('Axis')" :key="player.jugador">
+                            <div class="flex justify-between text-sm py-1 border-b border-gray-700">
+                                <span x-text="player.jugador"></span>
+                                <div class="flex items-center">
+                                    <span class="font-bold mr-4" x-text="player.score || 0"></span>
+                                    <span class="text-gray-400" x-text="player.ping || 0"></span>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
                 </div>
             </div>
         </section>
@@ -319,14 +344,14 @@
                     fetch('https://tranki.tinchomika.com/dh/api/dh-info')
                         .then(response => response.json())
                         .then(data => {
-                            this.players = data.sort((a, b) => {
-                                if (a.equipo === b.equipo) {
-                                    return b.score - a.score;
-                                }
-                                return a.equipo.localeCompare(b.equipo);
-                            });
+                            this.players = data;
                             this.loading = false;
                         });
+                },
+                getTeamPlayers(team) {
+                    return this.players
+                        .filter(p => (team === 'Allies' ? p.equipo === 'Blue' : p.equipo === 'Red'))
+                        .sort((a, b) => b.score - a.score);
                 }
             }));
 
@@ -364,5 +389,7 @@
         });
 
     </script>
+    <script data-goatcounter="https://lth.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>

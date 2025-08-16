@@ -36,7 +36,7 @@ const translations = {
         donations_subtitle: '¡Ayuda a mantener vivo el server!',
         donors_title: 'Agradecimientos',
         donors_p: `Aquí están los nombres de las personas que han donado al servidor:<br> <strong>Petri I.</strong> <br>¿Ya donaste y tu nombre no aparece aquí? <a href= "https://discord.gg/QdmFXbNQvq" target="_blank" class="text-blue-400 hover:underline">Contáctanos en Discord!</a>`,
-        footer_p: `&copy; 2025 Equipo administrador del 19RH. Esta página es mantenida por <a href="https://tinchomika.com/" target="_blank" class="text-blue-400 hover:underline"> Dino </a>`
+        footer_p: `&copy; 2025 Equipo administrador de La Taberna Hispana. Esta página es mantenida por <a href="https://tinchomika.com/" target="_blank" class="text-blue-400 hover:underline"> Dino </a>`
 
     },
     en: {
@@ -76,7 +76,7 @@ const translations = {
         donations_subtitle: 'Support our community server!',
         donors_title: 'Donors',
         donors_p: `Here are the names of the people who have helped us to keep the server running: <br> <strong>Petri I.</strong> <br>Already donated and your name is not here? <a href= "https://discord.gg/QdmFXbNQvq" target="_blank" class="text-blue-400 hover:underline">Contact us on Discord!</a>`,
-        footer_p: `&copy; 2025 19RH Admin team. This page is maintained by <a href="https://tinchomika.com/" target="_blank" class="text-blue-400 hover:underline"> Dino </a>`
+        footer_p: `&copy; 2025 La Taberna Hispana Admin team. This page is maintained by <a href="https://tinchomika.com/" target="_blank" class="text-blue-400 hover:underline"> Dino </a>`
     }
 };
 
