@@ -6,8 +6,9 @@
     <title>19RH - Comunidad Darkest Hour</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="i18n.js"></script>
 </head>
-<body class="bg-gray-900 text-white" x-data="{ lang: 'es' }">
+<body class="bg-gray-900 text-white" x-data="i18n">
 
     <header class="fixed top-0 left-0 right-0 bg-black bg-opacity-80 backdrop-blur-sm z-50">
         <div class="container mx-auto flex justify-between items-center p-4">
@@ -16,17 +17,12 @@
             </div>
             <nav>
                 <ul class="flex space-x-4">
-                    <li><a href="#" class="hover:text-blue-400" x-show="lang === 'es'">Inicio</a></li>
-                    <li><a href="#" class="hover:text-blue-400" x-show="lang === 'en'">Home</a></li>
-                    <li><a href="#player-container" class="hover:text-blue-400" x-show="lang === 'es'">Estadisticas</a></li>
-                    <li><a href="#player-container" class="hover:text-blue-400" x-show="lang === 'en'">Scoreboard</a></li>
-                    <li><a href="#donations-container" class="hover:text-blue-400" x-show="lang === 'es'">Donaciones</a></li>
-                    <li><a href="#donations-container" class="hover:text-blue-400" x-show="lang === 'en'">Donations</a></li>
+                    <li><a href="#" class="hover:text-blue-400" x-text="t('home')"></a></li>
+                    <li><a href="#player-container" class="hover:text-blue-400" x-text="t('scoreboard')"></a></li>
+                    <li><a href="#donations-container" class="hover:text-blue-400" x-text="t('donations')"></a></li>
                 </ul>
             </nav>
-            <button @click="lang = (lang === 'es' ? 'en' : 'es')" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
-                <span x-show="lang === 'es'">English</span>
-                <span x-show="lang === 'en'">Español</span>
+            <button @click="lang = (lang === 'es' ? 'en' : 'es')" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded" x-text="t('language_button')">
             </button>
         </div>
     </header>
@@ -53,49 +49,34 @@
                 </template>
             </div>
             <div class="container mx-auto h-full flex flex-col justify-center items-center text-center relative z-10">
-                <h1 class="text-5xl font-bold" x-show="lang === 'es'">Bienvenido al 19 Regimiento Hispano</h1>
-                <h1 class="text-5xl font-bold" x-show="lang === 'en'">Welcome to 19 RH's community server!</h1>
-                <p class="text-2xl mt-4" x-show="lang === 'es'">Una comunidad hispano-hablante centrada en Darkest Hour y demás juegos de la SGM</p>
-                <p class="text-2xl mt-4" x-show="lang === 'en'">An spanish speaking community for Darkest Hour and various WW2 games</p>
+                <h1 class="text-5xl font-bold" x-text="t('welcome_message')"></h1>
+                <p class="text-2xl mt-4" x-text="t('welcome_subtitle')"></p>
             </div>
         </section>
 
         <section class="py-20">
             <div class="container mx-auto text-center">
-                <h2 class="text-4xl font-bold" x-show="lang === 'es'">Sobre el clan</h2>
-                <h2 class="text-4xl font-bold" x-show="lang === 'en'">About the group</h2>
-                <p class="mt-4 max-w-4xl mx-auto" x-show="lang === 'es'">
-                    Somos una comunidad de jugadores que disfruta de jugar diversos juegos de la segunda guerra mundial,
-                    principalmente <strong>Darkest Hour: Europe '44-'45</strong>.
-                    <br> Contamos con un servidor público de DH y un servidor de Discord donde podés unirte para charlar
-                    sobre el juego, organizar eventos y demás. <br>Aunque nuestro servidor está alojado en Sudamérica y el idioma principal es el
-                    español, ¡todos son bienvenidos!
-                </p>
-                <p class="mt-4 max-w-4xl mx-auto" x-show="lang === 'en'">
-                    We are a community of mainly South American players who enjoy playing various World War II games,
-                    primarily <strong>Darkest Hour: Europe '44-'45</strong>.
-                    <br> Currently, we have a public server in DH, as well as a Discord server where we discuss about
-                    the game. Although the server is hosted in South America and spanish is the main language spoken,
-                    everyone is welcome!.
+                <h2 class="text-4xl font-bold" x-text="t('about_title')"></h2>
+                <p class="mt-4 max-w-4xl mx-auto">
+                    <span x-html="t('about_p_1')"></span>
+                    <br> <span x-html="t('about_p_2')"></span>
+                    <br> <span x-html="t('about_p_3')"></span>
                 </p>
             </div>
         </section>
 
         <section class="py-20 bg-gray-800">
             <div class="container mx-auto text-center">
-                <h2 class="text-4xl font-bold" x-show="lang === 'es'">¡Jugá con nosotros!</h2>
-                <h2 class="text-4xl font-bold" x-show="lang === 'en'">Join us!</h2>
+                <h2 class="text-4xl font-bold" x-text="t('join_title')"></h2>
                 <div class="grid md:grid-cols-2 gap-8 mt-8">
                     <div class="bg-gray-700 p-8 rounded-lg">
-                        <h3 class="text-2xl font-bold" x-show="lang === 'es'">Servidor de Darkest Hour</h3>
-                        <h3 class="text-2xl font-bold" x-show="lang === 'en'">Darkest Hour server</h3>
+                        <h3 class="text-2xl font-bold" x-text="t('join_server_title')"></h3>
                         <a href="https://www.gametracker.com/server_info/api.tinchomika.com:7757/" target="_blank">
                             <img src="https://cache.gametracker.com/server_info/api.tinchomika.com:7757/b_560_95_1.png" border="0" class="mt-4 mx-auto">
                         </a>
                     </div>
                     <div class="bg-gray-700 p-8 rounded-lg">
-                        <h3 class="text-2xl font-bold" x-show="lang === 'es'">Encontranos en Discord</h3>
-                        <h3 class="text-2xl font-bold" x-show="lang === 'en'">Discord</h3>
+                        <h3 class="text-2xl font-bold" x-text="t('join_discord_title')"></h3>
                         <a href="https://discord.gg/QdmFXbNQvq" target="_blank">
                             <img src="https://discord.com/api/guilds/1229627241902768209/widget.png?style=banner2" alt="Discord Banner 2" class="mt-4 mx-auto">
                         </a>
@@ -106,25 +87,19 @@
 
         <section id="player-container" class="py-20" x-data="players()">
             <div class="container mx-auto text-center">
-                <h2 class="text-4xl font-bold" x-show="lang === 'es'">Jugadores en línea</h2>
-                <h2 class="text-4xl font-bold" x-show="lang === 'en'">Online Players</h2>
-                <div x-show="loading" class="mt-8">Cargando...</div>
+                <h2 class="text-4xl font-bold" x-text="t('online_players_title')"></h2>
+                <div x-show="loading" class="mt-8" x-text="t('loading')"></div>
                 <div x-show="!loading && players.length === 0" class="mt-8">
-                    <p x-show="lang === 'es'">No hay jugadores conectados</p>
-                    <p x-show="lang === 'en'">No players connected</p>
+                    <p x-text="t('no_players')"></p>
                 </div>
                 <div x-show="!loading && players.length > 0" class="mt-8">
                     <table class="w-full text-left">
                         <thead>
                             <tr>
-                                <th class="p-2" x-show="lang === 'es'">Jugador</th>
-                                <th class="p-2" x-show="lang === 'en'">Player</th>
-                                <th class="p-2" x-show="lang === 'es'">Puntaje</th>
-                                <th class="p-2" x-show="lang === 'en'">Score</th>
-                                <th class="p-2" x-show="lang === 'es'">Equipo</th>
-                                <th class="p-2" x-show="lang === 'en'">Team</th>
-                                <th class="p-2" x-show="lang === 'es'">Ping</th>
-                                <th class="p-2" x-show="lang === 'en'">Ping</th>
+                                <th class="p-2" x-text="t('player')"></th>
+                                <th class="p-2" x-text="t('score')"></th>
+                                <th class="p-2" x-text="t('team')"></th>
+                                <th class="p-2" x-text="t('ping')"></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -144,24 +119,18 @@
 
         <section class="py-20 bg-gray-800" x-data="topPlayers()">
             <div class="container mx-auto text-center">
-                <h2 class="text-4xl font-bold" x-show="lang === 'es'">Mejores Jugadores</h2>
-                <h2 class="text-4xl font-bold" x-show="lang === 'en'">Top Players</h2>
-                <p class="subtitle" x-show="lang === 'es'">Basado en el puntaje total de las ultimas 100 partidas</p>
-                <p class="subtitle" x-show="lang === 'en'">Based on the total score of the last 100 games</p>
-                <div x-show="loading" class="mt-8">Cargando...</div>
-                <div x-show="!loading && players.length === 0" class="mt-8">No se encontraron jugadores.</div>
+                <h2 class="text-4xl font-bold" x-text="t('top_players_title')"></h2>
+                <p class="subtitle" x-text="t('top_players_subtitle')"></p>
+                <div x-show="loading" class="mt-8" x-text="t('loading')"></div>
+                <div x-show="!loading && players.length === 0" class="mt-8" x-text="t('no_players_found')"></div>
                 <div x-show="!loading && players.length > 0" class="mt-8">
                     <table class="w-full text-left">
                         <thead>
                             <tr>
-                                <th class="p-2" x-show="lang === 'es'">Posición</th>
-                                <th class="p-2" x-show="lang === 'en'">Position</th>
-                                <th class="p-2" x-show="lang === 'es'">Jugador</th>
-                                <th class="p-2" x-show="lang === 'en'">Player</th>
-                                <th class="p-2" x-show="lang === 'es'">Puntaje Total</th>
-                                <th class="p-2" x-show="lang === 'en'">Total Score</th>
-                                <th class="p-2" x-show="lang === 'es'">Partidas</th>
-                                <th class="p-2" x-show="lang === 'en'">Games Played</th>
+                                <th class="p-2" x-text="t('position')"></th>
+                                <th class="p-2" x-text="t('player')"></th>
+                                <th class="p-2" x-text="t('total_score')"></th>
+                                <th class="p-2" x-text="t('games_played')"></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -181,12 +150,10 @@
 
         <section class="py-20" x-data="recentGames()">
             <div class="container mx-auto text-center">
-                <h2 class="text-4xl font-bold" x-show="lang === 'es'">Partidas recientes</h2>
-                <h2 class="text-4xl font-bold" x-show="lang === 'en'">Recent Games</h2>
-                <p class="subtitle" x-show="lang === 'es'">Últimas batallas jugadas con +500 puntos</p>
-                <p class="subtitle" x-show="lang === 'en'">Last games played with +500 points</p>
-                <div x-show="loading" class="mt-8">Cargando...</div>
-                <div x-show="!loading && games.length === 0" class="mt-8">No se encontraron partidas.</div>
+                <h2 class="text-4xl font-bold" x-text="t('recent_games_title')"></h2>
+                <p class="subtitle" x-text="t('recent_games_subtitle')"></p>
+                <div x-show="loading" class="mt-8" x-text="t('loading')"></div>
+                <div x-show="!loading && games.length === 0" class="mt-8" x-text="t('no_games_found')"></div>
                 <div x-show="!loading && games.length > 0" class="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <template x-for="game in games.slice(0, 7)" :key="game.date">
                         <div class="bg-gray-800 p-4 rounded-lg">
@@ -197,12 +164,9 @@
                             <table class="w-full text-left text-sm">
                                 <thead>
                                     <tr>
-                                        <th class="p-1" x-show="lang === 'es'">Jugador</th>
-                                        <th class="p-1" x-show="lang === 'en'">Player</th>
-                                        <th class="p-1" x-show="lang === 'es'">Equipo</th>
-                                        <th class="p-1" x-show="lang === 'en'">Team</th>
-                                        <th class="p-1" x-show="lang === 'es'">Puntaje</th>
-                                        <th class="p-1" x-show="lang === 'en'">Score</th>
+                                        <th class="p-1" x-text="t('player')"></th>
+                                        <th class="p-1" x-text="t('team')"></th>
+                                        <th class="p-1" x-text="t('score')"></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -223,10 +187,8 @@
 
         <section id="donations-container" class="py-20 text-center">
             <div class="container mx-auto">
-                <h2 class="text-4xl font-bold" x-show="lang === 'es'">Donaciones</h2>
-                <h2 class="text-4xl font-bold" x-show="lang === 'en'">Donations</h2>
-                <p class="mt-4" x-show="lang === 'es'">¡Ayuda a mantener vivo el server!</p>
-                <p class="mt-4" x-show="lang === 'en'">Support our community server!</p>
+                <h2 class="text-4xl font-bold" x-text="t('donations_title')"></h2>
+                <p class="mt-4" x-text="t('donations_subtitle')"></p>
                 <div class="flex justify-center items-center space-x-4 mt-8">
                     <a href='https://cafecito.app/19regimientohispano' rel='noopener' target='_blank'>
                         <img srcset='https://cdn.cafecito.app/imgs/buttons/button_5.png 1x, https://cdn.cafecito.app/imgs/buttons/button_5_2x.png 2x, https://cdn.cafecito.app/imgs/buttons/button_5_3.75x.png 3.75x' src='https://cdn.cafecito.app/imgs/buttons/button_5.png' alt='Invitame un café en cafecito.app' class="h-16">
@@ -238,17 +200,15 @@
 
         <section class="py-20 bg-gray-800 text-center">
             <div class="container mx-auto">
-                <h3 class="text-2xl font-bold" x-show="lang === 'es'">Agradecimientos</h3>
-                <h3 class="text-2xl font-bold" x-show="lang === 'en'">Donors</h3>
-                <p class="mt-4" x-show="lang === 'es'">Aquí están los nombres de las personas que han donado al servidor: <strong>Whoops!</strong> No se han encontrado donaciones. <br>¿Ya donaste y tu nombre no aparece aquí? <a href= "https://discord.gg/QdmFXbNQvq" target="_blank" class="text-blue-400 hover:underline">Contáctanos en Discord!</a></p>
-                <p class="mt-4" x-show="lang === 'en'">Here are the names of the people who have helped us to keep the server running: <strong>Whoops!</strong> No donations found. <br>Already donated and your name is not here? <a href= "https://discord.gg/QdmFXbNQvq" target="_blank" class="text-blue-400 hover:underline">Contact us on Discord!</a></p>
+                <h3 class="text-2xl font-bold" x-text="t('donors_title')"></h3>
+                <p class="mt-4" x-html="t('donors_p')"></p>
             </div>
         </section>
     </main>
 
     <footer class="bg-black py-8 text-center text-white">
         <div class="container mx-auto">
-            <p>&copy; 2025 Equipo administrador del 19RH. Esta página es mantenida por <a href="https://tinchomika.com/" target="_blank" class="text-blue-400 hover:underline"> Dino </a></p>
+            <p x-html="t('footer_p')"></p>
             <div class="flex justify-center space-x-4 mt-4">
                 <a href="https://discord.gg/QdmFXbNQvq" target="_blank" class="hover:text-blue-400"><i class="fab fa-discord"></i></a>
                 <a href="https://x.com/tinchotin3" target="_blank" class="hover:text-blue-400"><i class="fab fa-twitter"></i></a>
